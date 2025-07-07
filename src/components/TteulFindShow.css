@@ -1,0 +1,502 @@
+.tteul-find-show {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* 컨텐츠 헤더 */
+.tteul-find-show .content-header {
+  margin-bottom: 32px;
+}
+
+.tteul-find-show .content-header h2 {
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.tteul-find-show .content-header p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* 단계별 탭 */
+.tteul-find-show .stage-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 8px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tteul-find-show .stage-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #64748b;
+  font-weight: 500;
+  position: relative;
+}
+
+.tteul-find-show .stage-tab:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.tteul-find-show .stage-tab.active {
+  background: var(--tab-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tteul-find-show .stage-icon {
+  font-size: 18px;
+}
+
+.tteul-find-show .stage-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tteul-find-show .content-count {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.tteul-find-show .stage-tab.active .content-count {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 현재 단계 정보 */
+.tteul-find-show .stage-info {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tteul-find-show .stage-info h3 {
+  font-size: 20px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.tteul-find-show .stage-info p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 컨텐츠 그리드 (데스크톱) */
+.tteul-find-show .content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.tteul-find-show .content-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tteul-find-show .content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3개 이미지 썸네일 레이아웃 */
+.tteul-find-show .content-thumbnail {
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tteul-find-show .image-trio {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.tteul-find-show .image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.tteul-find-show .image-container:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.tteul-find-show .image-container.original {
+  border: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.tteul-find-show .image-container.modified {
+  border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.tteul-find-show .image-container.difference {
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.tteul-find-show .image-placeholder {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.tteul-find-show .image-label {
+  font-size: 10px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tteul-find-show .content-card h3 {
+  padding: 16px 20px 8px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.tteul-find-show .content-card p {
+  padding: 0 20px 16px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tteul-find-show .content-actions {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.tteul-find-show .action-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tteul-find-show .action-btn.approve {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tteul-find-show .action-btn.approve:hover {
+  background: #bbf7d0;
+}
+
+.tteul-find-show .action-btn.reject {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.tteul-find-show .action-btn.reject:hover {
+  background: #fecaca;
+}
+
+.tteul-find-show .action-btn.edit {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.tteul-find-show .action-btn.edit:hover {
+  background: #dbeafe;
+}
+
+.tteul-find-show .action-btn.generated {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tteul-find-show .action-btn.generated:hover {
+  background: #fde68a;
+}
+
+.tteul-find-show .action-btn.upload {
+  background: #f0f9ff;
+  color: #0c4a6e;
+}
+
+.tteul-find-show .action-btn.upload:hover {
+  background: #e0f2fe;
+}
+
+.tteul-find-show .action-btn.delete {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.tteul-find-show .action-btn.delete:hover {
+  background: #fecaca;
+}
+
+/* 모바일 캐러셀 */
+.tteul-find-show .mobile-carousel {
+  position: relative;
+  width: 100%;
+}
+
+/* 상단 네비게이션 영역 */
+.tteul-find-show .carousel-top-nav {
+  background: white;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 슬라이드 카운터 (상단) */
+.tteul-find-show .slide-counter {
+  text-align: center;
+  padding: 12px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* 캐러셀 네비게이션 (상단) */
+.tteul-find-show .carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: white;
+}
+
+.tteul-find-show .carousel-container {
+  overflow: hidden;
+  border-radius: 0 0 12px 12px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.tteul-find-show .carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.tteul-find-show .carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.tteul-find-show .nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  color: #475569;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tteul-find-show .nav-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+
+.tteul-find-show .nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 슬라이드 인디케이터 */
+.tteul-find-show .slide-indicators {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tteul-find-show .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tteul-find-show .indicator.active {
+  background: #475569;
+  transform: scale(1.3);
+}
+
+/* 빈 상태 */
+.tteul-find-show .empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tteul-find-show .empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.tteul-find-show .empty-state h3 {
+  font-size: 20px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.tteul-find-show .empty-state p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .tteul-find-show .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tteul-find-show .stage-tabs {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .tteul-find-show .stage-tab {
+    flex: none;
+  }
+  
+  .tteul-find-show .content-actions {
+    flex-direction: column;
+  }
+  
+  .tteul-find-show .action-btn {
+    flex: none;
+  }
+
+  /* 모바일에서 3개 이미지 더 크게 세로 배치 */
+  .tteul-find-show .content-thumbnail {
+    height: 320px;
+    padding: 20px;
+  }
+
+  .tteul-find-show .image-trio {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tteul-find-show .image-container {
+    flex: none;
+    height: 80px;
+    padding: 12px;
+    border-width: 3px;
+  }
+
+  .tteul-find-show .image-placeholder {
+    height: 50px;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .tteul-find-show .image-label {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  /* 모바일 캐러셀에서 카드 스타일 조정 */
+  .tteul-find-show .carousel-slide .content-card {
+    margin: 0 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .tteul-find-show .carousel-slide .content-card h3 {
+    font-size: 20px;
+    padding: 20px 24px 10px;
+  }
+
+  .tteul-find-show .carousel-slide .content-card p {
+    font-size: 15px;
+    padding: 0 24px 20px;
+    line-height: 1.6;
+  }
+
+  .tteul-find-show .carousel-slide .content-actions {
+    padding: 20px 24px 24px;
+    gap: 12px;
+  }
+
+  .tteul-find-show .carousel-slide .action-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+} 
