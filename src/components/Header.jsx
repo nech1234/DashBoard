@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
+import { useChannels } from "../hooks/useChannels";
 import "./Header.css";
 
-const Header = ({ isSidebarOpen, toggleSidebar, setIsSidebarOpen, selectedChannel, onChannelSelect, onLogoClick }) => {
-  const channels = [
-    { id: 1, name: "틀찾쇼", icon: "🎯" },
-    // 추가 채널들은 나중에 여기에 추가할 수 있습니다
-  ];
+const Header = ({
+  isSidebarOpen,
+  toggleSidebar,
+  setIsSidebarOpen,
+  selectedChannel,
+  onChannelSelect,
+  onLogoClick,
+}) => {
+  const { channels, loading, error } = useChannels();
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -48,10 +53,7 @@ const Header = ({ isSidebarOpen, toggleSidebar, setIsSidebarOpen, selectedChanne
             ☰
           </button>
           <span className="logo-icon">📺</span>
-          <button 
-            className="logo-button"
-            onClick={handleDashboardClick}
-          >
+          <button className="logo-button" onClick={handleDashboardClick}>
             <h1 className="logo-text">Dashboard</h1>
           </button>
         </div>
@@ -77,19 +79,31 @@ const Header = ({ isSidebarOpen, toggleSidebar, setIsSidebarOpen, selectedChanne
           </button>
         </div>
         <nav>
-          {channels.map((channel) => (
-            <button
-              key={channel.id}
-              className={`channel-item ${selectedChannel?.id === channel.id ? 'active' : ''}`}
-              onClick={() => handleChannelClick(channel)}
-            >
-              <span className="channel-icon">{channel.icon}</span>
-              <span className="channel-name">{channel.name}</span>
-            </button>
-          ))}
-          <button className="add-channel-btn">
-            ➕ 새 채널 추가
-          </button>
+          {loading ? (
+            <div className="loading-channels">
+              <p>채널을 불러오는 중...</p>
+            </div>
+          ) : error ? (
+            <div className="error-channels">
+              <p>채널을 불러오는데 실패했습니다</p>
+            </div>
+          ) : (
+            <>
+              {channels.map((channel) => (
+                <button
+                  key={channel.id}
+                  className={`channel-item ${
+                    selectedChannel?.id === channel.id ? "active" : ""
+                  }`}
+                  onClick={() => handleChannelClick(channel)}
+                >
+                  <span className="channel-icon">{channel.icon}</span>
+                  <span className="channel-name">{channel.name}</span>
+                </button>
+              ))}
+              <button className="add-channel-btn">➕ 새 채널 추가</button>
+            </>
+          )}
         </nav>
       </aside>
     </header>
